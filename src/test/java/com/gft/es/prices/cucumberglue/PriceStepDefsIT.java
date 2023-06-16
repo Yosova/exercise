@@ -6,9 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import java.util.Map;
-
 import static io.restassured.RestAssured.given;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
