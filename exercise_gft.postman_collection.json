@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "1fefddef-535d-4354-aaac-46b9a20710d2",
+		"name": "exercise_gft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1420741"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/prices",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"brandId\": 1,\r\n    \"startDate\": \"2020-06-14 15.00.00\",\r\n    \"productId\": \"35455\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/prices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"prices"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
