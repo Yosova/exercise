@@ -1,7 +1,7 @@
 package com.gft.es.prices.application.service.impl;
 
 import com.gft.es.prices.application.service.PriceService;
-import com.gft.es.prices.application.service.mapper.PriceMapper;
+import com.gft.es.prices.application.mapper.PriceMapper;
 import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
 import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
 import com.gft.es.prices.infrastructure.repository.PriceRepository;

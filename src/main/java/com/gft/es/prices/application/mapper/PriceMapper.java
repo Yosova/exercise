@@ -1,4 +1,4 @@
-package com.gft.es.prices.application.service.mapper;
+package com.gft.es.prices.application.mapper;
 
 
 import com.gft.es.prices.domain.PriceModel;
