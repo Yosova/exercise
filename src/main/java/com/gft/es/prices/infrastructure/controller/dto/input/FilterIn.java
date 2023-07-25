@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class FilterIn {
 
     @NotNull
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss")
     private LocalDateTime applicationDate;
     @NotNull
     @Min(value = 1, message = "value can not less than 1")

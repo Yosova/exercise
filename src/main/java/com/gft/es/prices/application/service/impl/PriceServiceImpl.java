@@ -5,7 +5,6 @@ import com.gft.es.prices.infrastructure.mapper.PriceMapper;
 import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
 import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
 import com.gft.es.prices.application.repository.PriceRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,10 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public PricesOut filter(FilterIn filterIn) throws NotFoundException {
-
+        if(ObjectUtils.isEmpty(filterIn) || ObjectUtils.isEmpty(filterIn.getProductId())
+                || ObjectUtils.isEmpty(filterIn.getBrandId()) || ObjectUtils.isEmpty(filterIn.getBrandId())){
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, filterIn.toString());
+        }
         return priceRepository.findFirstByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(filterIn.getProductId(), filterIn.getBrandId(), filterIn.getApplicationDate(),  filterIn.getApplicationDate())
                 .stream()
                 .findFirst()

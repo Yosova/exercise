@@ -6,11 +6,9 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Data
 @Builder
 @Entity
@@ -37,11 +35,4 @@ public class PriceModel {
   @Column(name = "CURR")
   private String curr;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public Long getId() {
-    return id;
-  }
 }
