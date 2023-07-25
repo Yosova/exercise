@@ -1,4 +1,4 @@
-package com.gft.es.prices.infrastructure.repository;
+package com.gft.es.prices.application.repository;
 
 
 import com.gft.es.prices.domain.PriceModel;

@@ -4,9 +4,11 @@ import com.gft.es.prices.application.service.PriceService;
 import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
 import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
 import jakarta.validation.Valid;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
 
 @Validated
 @RestController
@@ -21,10 +23,11 @@ public class PriceController {
   }
 
 
-  @PostMapping("")
-  public ResponseEntity<PricesOut> status(@Valid @RequestBody FilterIn statusIn) {
 
-    return priceService.filter(statusIn).map(ResponseEntity::ok).orElse(ResponseEntity.noContent().build());
+  @PostMapping("")
+  public ResponseEntity<PricesOut> status(@Valid @RequestBody FilterIn statusIn) throws Exception{
+
+    return ResponseEntity.ok(priceService.filter(statusIn));
   }
 
 }
