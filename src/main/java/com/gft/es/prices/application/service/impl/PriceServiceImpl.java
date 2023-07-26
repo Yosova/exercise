@@ -1,10 +1,10 @@
 package com.gft.es.prices.application.service.impl;
 
 import com.gft.es.prices.application.service.PriceService;
-import com.gft.es.prices.infrastructure.mapper.PriceMapper;
-import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
-import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
-import com.gft.es.prices.application.repository.PriceRepository;
+import com.gft.es.prices.application.mapper.PriceMapper;
+import com.gft.es.prices.infrastructure.rest.dto.input.FilterIn;
+import com.gft.es.prices.infrastructure.rest.dto.output.PricesOut;
+import com.gft.es.prices.infrastructure.springdata.repository.PriceRepository;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

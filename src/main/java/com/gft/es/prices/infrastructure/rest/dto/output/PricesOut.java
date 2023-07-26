@@ -1,4 +1,4 @@
-package com.gft.es.prices.infrastructure.controller.dto.output;
+package com.gft.es.prices.infrastructure.rest.dto.output;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;

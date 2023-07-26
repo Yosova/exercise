@@ -1,7 +1,7 @@
-package com.gft.es.prices.application.repository;
+package com.gft.es.prices.infrastructure.springdata.repository;
 
 
-import com.gft.es.prices.domain.PriceModel;
+import com.gft.es.prices.infrastructure.springdata.dbo.PriceModel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.gft.es.prices.domain;
+package com.gft.es.prices.infrastructure.springdata.dbo;
 
 
 import jakarta.persistence.*;

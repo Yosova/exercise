@@ -1,10 +1,9 @@
-package com.gft.es.prices.infrastructure.controller;
+package com.gft.es.prices.infrastructure.rest;
 
 import com.gft.es.prices.application.service.PriceService;
-import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
-import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
+import com.gft.es.prices.infrastructure.rest.dto.input.FilterIn;
+import com.gft.es.prices.infrastructure.rest.dto.output.PricesOut;
 import jakarta.validation.Valid;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

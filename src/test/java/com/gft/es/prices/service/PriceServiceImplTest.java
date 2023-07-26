@@ -1,21 +1,14 @@
 package com.gft.es.prices.service;
 
-import com.gft.es.prices.application.repository.PriceRepository;
+import com.gft.es.prices.infrastructure.springdata.repository.PriceRepository;
 import com.gft.es.prices.application.service.PriceService;
-import com.gft.es.prices.application.service.impl.PriceServiceImpl;
-import com.gft.es.prices.domain.PriceModel;
-import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
-import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
+import com.gft.es.prices.infrastructure.springdata.dbo.PriceModel;
+import com.gft.es.prices.infrastructure.rest.dto.input.FilterIn;
+import com.gft.es.prices.infrastructure.rest.dto.output.PricesOut;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.util.ObjectUtils;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.LocalDateTime;

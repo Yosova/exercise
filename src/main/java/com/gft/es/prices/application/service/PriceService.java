@@ -1,7 +1,7 @@
 package com.gft.es.prices.application.service;
 
-import com.gft.es.prices.infrastructure.controller.dto.input.FilterIn;
-import com.gft.es.prices.infrastructure.controller.dto.output.PricesOut;
+import com.gft.es.prices.infrastructure.rest.dto.input.FilterIn;
+import com.gft.es.prices.infrastructure.rest.dto.output.PricesOut;
 import org.springframework.data.crossstore.ChangeSetPersister;
 
 
