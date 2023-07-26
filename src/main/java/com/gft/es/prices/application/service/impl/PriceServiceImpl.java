@@ -2,8 +2,8 @@ package com.gft.es.prices.application.service.impl;
 
 import com.gft.es.prices.application.service.PriceService;
 import com.gft.es.prices.application.mapper.PriceMapper;
-import com.gft.es.prices.infrastructure.rest.dto.input.FilterIn;
-import com.gft.es.prices.infrastructure.rest.dto.output.PricesOut;
+import com.gft.es.prices.domain.Price;
+import com.gft.es.prices.infrastructure.rest.dto.FilterIn;
 import com.gft.es.prices.infrastructure.springdata.repository.PriceRepository;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ public class PriceServiceImpl implements PriceService {
     }
 
     @Override
-    public PricesOut filter(FilterIn filterIn) throws NotFoundException {
+    public Price filter(FilterIn filterIn) throws NotFoundException {
         if(ObjectUtils.isEmpty(filterIn) || ObjectUtils.isEmpty(filterIn.getProductId())
                 || ObjectUtils.isEmpty(filterIn.getBrandId()) || ObjectUtils.isEmpty(filterIn.getBrandId())){
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, filterIn.toString());
@@ -33,6 +33,6 @@ public class PriceServiceImpl implements PriceService {
         return priceRepository.findFirstByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(filterIn.getProductId(), filterIn.getBrandId(), filterIn.getApplicationDate(),  filterIn.getApplicationDate())
                 .stream()
                 .findFirst()
-                .map(priceMapper::toPriceOut).orElseThrow(NotFoundException::new);
+                .map(priceMapper::toPrice).orElseThrow(NotFoundException::new);
     }
 }

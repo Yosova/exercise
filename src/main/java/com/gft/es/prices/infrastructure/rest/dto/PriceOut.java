@@ -1,4 +1,4 @@
-package com.gft.es.prices.infrastructure.rest.dto.output;
+package com.gft.es.prices.infrastructure.rest.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @JsonNaming(value = PropertyNamingStrategies.LowerCamelCaseStrategy.class)
-public class PricesOut {
+public class PriceOut {
 
 
     private Integer brandId;

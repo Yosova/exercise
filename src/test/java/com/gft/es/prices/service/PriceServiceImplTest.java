@@ -1,10 +1,10 @@
 package com.gft.es.prices.service;
 
+import com.gft.es.prices.domain.Price;
 import com.gft.es.prices.infrastructure.springdata.repository.PriceRepository;
 import com.gft.es.prices.application.service.PriceService;
 import com.gft.es.prices.infrastructure.springdata.dbo.PriceModel;
-import com.gft.es.prices.infrastructure.rest.dto.input.FilterIn;
-import com.gft.es.prices.infrastructure.rest.dto.output.PricesOut;
+import com.gft.es.prices.infrastructure.rest.dto.FilterIn;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,7 +34,7 @@ public class PriceServiceImplTest {
 		FilterIn filterIn = getFilter();
 		when(priceRepository.findFirstByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(filterIn.getProductId(), filterIn.getBrandId(), filterIn.getApplicationDate(), filterIn.getApplicationDate()))
 				.thenReturn(Optional.of(getPriceModel()));
-		PricesOut filter = priceService.filter(filterIn);
+		Price filter = priceService.filter(filterIn);
 		assertNotNull(filter);
 	}
 
